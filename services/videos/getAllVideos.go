@@ -9,8 +9,8 @@ import (
 func GetAllVideos() []*dto.VideoDto {
 
   db := config.StartDataBase()
-  db.Query("SELECT * FROM videos")
-  
+  //db.Query("SELECT * FROM videos")
+
   defer db.Close()
   rows, err := db.Query("SELECT * FROM videos")
   if err != nil {
@@ -45,6 +45,5 @@ func GetAllVideos() []*dto.VideoDto {
   }
 
   return videos
-
 }
 

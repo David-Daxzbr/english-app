@@ -12,6 +12,6 @@ func main() {
 	http.HandleFunc("/", handlers.Home)
 	http.HandleFunc("/login", handlers.Login)
 
-	fmt.Println("Listening on :3000")
+	fmt.Println("Listening on port :3000")
 	http.ListenAndServe(":3000", nil)
 }

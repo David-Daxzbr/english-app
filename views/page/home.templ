@@ -1,11 +1,23 @@
 package page
 
 import "github.com/david-daxzbr/english-app/views/layout"
+import "github.com/david-daxzbr/english-app/views/component"
+import "github.com/david-daxzbr/english-app/services/videos"
 
 templ Home(title string) {
 	@layout.Base("home"){
     <div class="w-full h-screen">
       <div>Dinamically content goes here!</div>    
+        <ul>
+          for _, item := range videos.GetAllVideos() {
+            <div>
+              <img src={ item.VideoThumbnail } />
+              <li> { item.VideoTitle } </li>
+              <li> { item.VideoDescription } </li>
+            </div>
+          } 
+      </ul>
+      @component.BottomNavigation()
     </div>
   }
 }
